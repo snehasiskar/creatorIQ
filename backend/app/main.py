@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers.auth import router as auth_router
 
 app = FastAPI()
-
+app.include_router(analytics_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -14,7 +14,6 @@ app.add_middleware(
 )
 
 app.include_router(auth_router)
-app.include_router(analytics_router)
 @app.get("/")
 def home():
     return {"message": "CreatorIQ API Running"}

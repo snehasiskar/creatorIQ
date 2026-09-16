@@ -1,20 +1,16 @@
-def get_audience_data():
+def audience_report(
+    followers: int,
+    new_followers: int,
+    returning_followers: int
+):
+    growth_rate = 0
+
+    if followers > 0:
+        growth_rate = (new_followers / followers) * 100
+
     return {
-        "age_distribution": {
-            "18-24": 35,
-            "25-34": 40,
-            "35-44": 15,
-            "45+": 10
-        },
-        "gender_distribution": {
-            "Male": 55,
-            "Female": 40,
-            "Other": 5
-        },
-        "locations": {
-            "India": 60,
-            "USA": 15,
-            "UK": 10,
-            "Others": 15
-        }
+        "followers": followers,
+        "new_followers": new_followers,
+        "returning_followers": returning_followers,
+        "growth_rate": round(growth_rate, 2)
     }

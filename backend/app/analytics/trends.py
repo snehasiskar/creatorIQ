@@ -1,27 +1,20 @@
-def get_growth_data():
+def calculate_growth(data: list[int]):
+    if len(data) < 2:
+        return {
+            "growth": 0,
+            "trend": "stable"
+        }
+
+    growth = data[-1] - data[0]
+
+    if growth > 0:
+        trend = "increasing"
+    elif growth < 0:
+        trend = "decreasing"
+    else:
+        trend = "stable"
+
     return {
-        "labels": [
-            "Week 1",
-            "Week 2",
-            "Week 3",
-            "Week 4",
-            "Week 5",
-            "Week 6"
-        ],
-        "followers": [
-            1000,
-            1250,
-            1450,
-            1800,
-            2200,
-            2600
-        ],
-        "views": [
-            5000,
-            6500,
-            7200,
-            9000,
-            11000,
-            12500
-        ]
+        "growth": growth,
+        "trend": trend
     }
