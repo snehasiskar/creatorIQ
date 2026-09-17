@@ -51,5 +51,5 @@ def trends(data: str):
 
 # 4. Social Media Integration
 @router.get("/social-media")
-def social_media(platform: str):
+def social_media(platform: str=None):
     return get_social_media_data(platform)
