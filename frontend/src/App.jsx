@@ -87,6 +87,7 @@ function App() {
             <strong>Total Engagement:</strong>{" "}
             {engagement.total_engagement}
           </p>
+
           <p>
             <strong>Engagement Rate:</strong>{" "}
             {engagement.engagement_rate}%
@@ -101,13 +102,16 @@ function App() {
           <p>
             <strong>Followers:</strong> {audience.followers}
           </p>
+
           <p>
             <strong>New Followers:</strong> {audience.new_followers}
           </p>
+
           <p>
             <strong>Returning Followers:</strong>{" "}
             {audience.returning_followers}
           </p>
+
           <p>
             <strong>Growth Rate:</strong> {audience.growth_rate}%
           </p>
@@ -150,11 +154,62 @@ function App() {
       {platformData.map((platform) => (
         <div key={platform.platform}>
           <h3>{platform.platform}</h3>
-          <p>Followers: {platform.followers}</p>
-          <p>Likes: {platform.likes}</p>
-          <p>Comments: {platform.comments}</p>
-          <p>Shares: {platform.shares}</p>
-          <p>Views: {platform.views}</p>
+
+          {platform.platform === "YouTube" ? (
+            <>
+              <p>
+                <strong>Status:</strong>{" "}
+                {platform.status}
+              </p>
+
+              <p>
+                <strong>Channel:</strong>{" "}
+                {platform.channel_name}
+              </p>
+
+              <p>
+                <strong>Subscribers:</strong>{" "}
+                {platform.followers}
+              </p>
+
+              <p>
+                <strong>Views:</strong>{" "}
+                {platform.views}
+              </p>
+
+              <p>
+                <strong>Videos:</strong>{" "}
+                {platform.videos}
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                <strong>Followers:</strong>{" "}
+                {platform.followers}
+              </p>
+
+              <p>
+                <strong>Likes:</strong>{" "}
+                {platform.likes}
+              </p>
+
+              <p>
+                <strong>Comments:</strong>{" "}
+                {platform.comments}
+              </p>
+
+              <p>
+                <strong>Shares:</strong>{" "}
+                {platform.shares}
+              </p>
+
+              <p>
+                <strong>Views:</strong>{" "}
+                {platform.views}
+              </p>
+            </>
+          )}
         </div>
       ))}
     </div>
