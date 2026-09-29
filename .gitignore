@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+backend/venv/
+
+# Environment variables
+.env
+backend/.env
+
+# Generated reports
+revenue_report.pdf
+revenue_report.xlsx
+
+# Node
+node_modules/
+
+# Build files
+dist/
